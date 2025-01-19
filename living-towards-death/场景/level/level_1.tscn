@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=4 uid="uid://dwc0iuw67hkyj"]
+
+[ext_resource type="PackedScene" uid="uid://x0ira55cwa7p" path="res://场景/level/level.tscn" id="1_4fwbe"]
+[ext_resource type="FontFile" uid="uid://c4d86mydkoy8c" path="res://资源/Font.ttf" id="2_4hc03"]
+[ext_resource type="PackedScene" uid="uid://c23mnay2qfdtc" path="res://场景/player/player.tscn" id="2_k0u2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdt6n"]
+size = Vector2(96, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02o4d"]
+size = Vector2(16, 51)
+
+[node name="level_1" instance=ExtResource("1_4fwbe")]
+self_path = "res://场景/level/level_1.tscn"
+num = 5
+
+[node name="TileMapLayer" parent="tile" index="1"]
+tile_map_data = PackedByteArray("AAD4/wQAAAACAAEAAAD5/wQAAAACAAEAAAD6/wQAAAACAAEAAAD7/wQAAAADAAEAAAAFAAQAAAACAAEAAAAGAAQAAAACAAEAAAAJAAQAAAACAAEAAAAKAAQAAAACAAEAAAAHAAQAAAACAAEAAAAIAAQAAAACAAEAAAD3/wQAAAACAAEAAAD2/wQAAAACAAEAAAD1/wQAAAACAAEAAAD0/wQAAAACAAEAAAALAAQAAAACAAEAAAD9/wUAAAACAAEAAAD+/wUAAAACAAEAAAD//wUAAAACAAEAAAAAAAUAAAACAAEAAAD8/wQAAAABAA4AAAD9/wQAAAACAA4AAAD+/wQAAAABAA4AAAD//wQAAAACAA4AAAAAAAQAAAABAA4AAAABAAQAAAACAA4AAAACAAQAAAABAAEAAAADAAQAAAACAAEAAAAEAAQAAAACAAEAAAD1//v/AAACAAMAAAD2//v/AAACAAMAAAD3//v/AAACAAMAAAD4//v/AAACAAMAAAD5//v/AAACAAMAAAD6//v/AAACAAMAAAD7//v/AAACAAMAAAD8//v/AAACAAMAAAD9//v/AAACAAMAAAD+//v/AAACAAMAAAD///v/AAACAAMAAAAAAPv/AAACAAMAAAABAPv/AAACAAMAAAACAPv/AAACAAMAAAADAPv/AAACAAMAAAAEAPv/AAACAAMAAAAFAPv/AAACAAMAAAAGAPv/AAACAAMAAAAHAPv/AAACAAMAAAAIAPv/AAACAAMAAAAJAPv/AAACAAMAAAAKAPv/AAACAAMAAAD0//z/AAADAAIAAAD0//3/AAADAAIAAAD0//7/AAADAAIAAAD0////AAADAAIAAAD0/wAAAAADAAIAAAD0/wEAAAADAAMAAADz/wQAAAACAAEAAAALAPz/AAABAAIAAAALAP3/AAABAAIAAAALAP7/AAABAAIAAAALAP//AAABAAIAAAALAAAAAAABAAIAAAALAAEAAAABAAMAAAAMAAQAAAACAAEAAAD0//v/AAAGAAMAAAALAPv/AAAFAAMAAAD8/wUAAAACAAEAAAD7/wUAAAAGAAIAAAABAAUAAAACAAEAAAACAAUAAAAFAAIAAAAMAAEAAAACAAMAAADz/wEAAAACAAMAAADz/wMAAAAKAAoAAADz/wIAAAAKAAoAAAA=")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/PlayerDie" index="0"]
+position = Vector2(-16, 76)
+shape = SubResource("RectangleShape2D_tdt6n")
+
+[node name="传送点" parent="tool" index="1"]
+self_path = "res://场景/level/level_1.tscn"
+path = "res://场景/level/level_2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/传送点" index="0"]
+position = Vector2(204, 52.5)
+shape = SubResource("RectangleShape2D_02o4d")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tool" index="2"]
+offset_left = -127.0
+offset_top = -53.0
+offset_right = 147.0
+offset_bottom = 4.0
+theme_override_fonts/normal_font = ExtResource("2_4hc03")
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "Death is inevitable, but it paves 
+ the way for future generations"
+
+[node name="Player" parent="." index="3" instance=ExtResource("2_k0u2m")]
+position = Vector2(-171, 48)
+pos = Vector2(-171, 48)

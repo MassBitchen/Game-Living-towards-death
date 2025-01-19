@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=4 uid="uid://cc2aj478qq7pf"]
+
+[ext_resource type="PackedScene" uid="uid://x0ira55cwa7p" path="res://场景/level/level.tscn" id="1_elopi"]
+[ext_resource type="FontFile" uid="uid://c4d86mydkoy8c" path="res://资源/Font.ttf" id="2_otl2h"]
+[ext_resource type="PackedScene" uid="uid://c23mnay2qfdtc" path="res://场景/player/player.tscn" id="3_qmbn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x25s7"]
+size = Vector2(80, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj4k0"]
+size = Vector2(63, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf4ml"]
+size = Vector2(20, 33)
+
+[node name="level_5" instance=ExtResource("1_elopi")]
+self_path = "res://场景/level/level_5.tscn"
+num = 12
+
+[node name="TileMapLayer" parent="tile" index="1"]
+tile_map_data = PackedByteArray("AAD2/wAAAAACAAEAAAD3/wAAAAACAAEAAAD4/wAAAAACAAEAAAD5/wAAAAACAAEAAAD6/wAAAAACAAEAAAD7/wAAAAACAAEAAAD8/wAAAAADAAEAAAACAAAAAAABAAEAAAADAAAAAAACAAEAAAAEAAAAAAACAAEAAAAFAAAAAAACAAEAAAAGAAAAAAACAAEAAAAHAAAAAAACAAEAAAAIAAAAAAACAAEAAAAJAAAAAAACAAEAAAAKAAAAAAACAAEAAAALAAAAAAACAAEAAAACAP//AAADAA4AAAADAP//AAAEAA4AAAAEAP//AAADAA4AAAAFAP//AAABAA4AAAD8/wEAAAADAAIAAAD8/wIAAAADAAIAAAD8/wMAAAADAAIAAAD8/wQAAAADAAIAAAACAAEAAAABAAIAAAACAAIAAAABAAIAAAACAAMAAAABAAIAAAACAAQAAAABAAIAAAD9/wYAAAACAAEAAAD+/wYAAAACAAEAAAD//wYAAAACAAEAAAAAAAYAAAACAAEAAAABAAYAAAACAAEAAAACAAUAAAABAAIAAAD8/wUAAAADAAIAAAD2//r/AAACAAMAAAD3//r/AAACAAMAAAD4//r/AAACAAMAAAD5//r/AAACAAMAAAD6//r/AAACAAMAAAD7//r/AAACAAMAAAD8//r/AAACAAMAAAD9//r/AAACAAMAAAD+//r/AAACAAMAAAD///r/AAACAAMAAAAAAPr/AAACAAMAAAABAPr/AAACAAMAAAACAPr/AAACAAMAAAADAPr/AAACAAMAAAAEAPr/AAACAAMAAAAFAPr/AAACAAMAAAAGAPr/AAACAAMAAAAHAPr/AAACAAMAAAAIAPr/AAACAAMAAAAJAPr/AAACAAMAAAAKAPr/AAACAAMAAAD1//r/AAACAAMAAAD1/wAAAAACAAEAAAD0/wAAAAACAAEAAADz/wAAAAACAAEAAAAMAAAAAAACAAEAAAD0//v/AAADAAIAAAD0//z/AAADAAIAAAD0//3/AAADAAMAAADz//3/AAACAAMAAADz//7/AAAKAAoAAADz////AAAKAAoAAAALAPv/AAABAAIAAAALAPz/AAABAAIAAAALAP3/AAABAAMAAAAMAP3/AAACAAMAAAALAPr/AAAFAAMAAAD0//r/AAAGAAMAAAACAAYAAAAFAAIAAAD8/wYAAAAGAAIAAAD+/wUAAAAFAA4AAAD//wUAAAAGAA4AAAAAAAUAAAAFAA4AAAABAAUAAAAGAA4AAAD9/wUAAAAFAA4AAAA=")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/PlayerDie" index="0"]
+position = Vector2(-8, 92)
+shape = SubResource("RectangleShape2D_x25s7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="tool/PlayerDie" index="1"]
+position = Vector2(63.5, -3.5)
+shape = SubResource("RectangleShape2D_vj4k0")
+
+[node name="传送点" parent="tool" index="1"]
+self_path = "res://场景/level/level_5.tscn"
+path = "res://场景/level/level_6.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/传送点" index="0"]
+position = Vector2(208, -17)
+shape = SubResource("RectangleShape2D_hf4ml")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tool" index="2"]
+visible = false
+offset_left = -149.0
+offset_top = -76.0
+offset_right = 152.0
+offset_bottom = -19.0
+theme_override_fonts/normal_font = ExtResource("2_otl2h")
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "	         human bridge
+Hold down [Shift] to stop at the edge"
+
+[node name="Player" parent="." index="3" instance=ExtResource("3_qmbn4")]
+position = Vector2(-164, -16)
+pos = Vector2(-164, -16)

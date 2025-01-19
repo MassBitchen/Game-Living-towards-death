@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=4 uid="uid://cx0tiaf15ae8i"]
+
+[ext_resource type="PackedScene" uid="uid://x0ira55cwa7p" path="res://场景/level/level.tscn" id="1_juue2"]
+[ext_resource type="FontFile" uid="uid://c4d86mydkoy8c" path="res://资源/Font.ttf" id="2_76axh"]
+[ext_resource type="PackedScene" uid="uid://c23mnay2qfdtc" path="res://场景/player/player.tscn" id="3_l6p2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omdkc"]
+size = Vector2(79, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf4ml"]
+size = Vector2(20, 33)
+
+[node name="level_4" instance=ExtResource("1_juue2")]
+self_path = "res://场景/level/level_4.tscn"
+num = 14
+
+[node name="TileMapLayer" parent="tile" index="1"]
+tile_map_data = PackedByteArray("AAD1/wQAAAACAAEAAAD2/wQAAAACAAEAAAD3/wQAAAACAAEAAAD4/wQAAAACAAEAAAD5/wQAAAACAAEAAAD6/wQAAAACAAEAAAD7/wQAAAACAAEAAAD8/wQAAAACAAEAAAD0/wQAAAACAAEAAAD9/wEAAAABAAEAAAD+/wEAAAACAAEAAAD//wEAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAAGAAEAAAACAAEAAAAHAAEAAAACAAEAAAAIAAEAAAACAAEAAAAJAAEAAAACAAEAAAAKAAEAAAACAAEAAAALAAEAAAACAAEAAAABAAAAAAABAA4AAAACAAAAAAACAA4AAAADAAAAAAABAA4AAAAEAAAAAAACAA4AAAAFAAAAAAABAA4AAAD0//7/AAADAAIAAAD0////AAADAAIAAAD0/wAAAAADAAIAAAD0/wEAAAADAAMAAAD0//z/AAADAAIAAAD0//3/AAADAAIAAAD1//v/AAACAAMAAAD2//v/AAACAAMAAAD3//v/AAACAAMAAAD4//v/AAACAAMAAAD5//v/AAACAAMAAAD6//v/AAACAAMAAAD7//v/AAACAAMAAAD8//v/AAACAAMAAAD9//v/AAACAAMAAAD+//v/AAACAAMAAAD///v/AAACAAMAAAAAAPv/AAACAAMAAAABAPv/AAACAAMAAAACAPv/AAACAAMAAAADAPv/AAACAAMAAAAEAPv/AAACAAMAAAAFAPv/AAACAAMAAAAGAPv/AAACAAMAAAAHAPv/AAACAAMAAAAIAPv/AAACAAMAAAAJAPv/AAACAAMAAAAKAPv/AAACAAMAAAALAPz/AAABAAIAAAALAP3/AAABAAIAAAALAP7/AAABAAMAAAD9/wIAAAABAAIAAAD9/wMAAAABAAIAAAD9/wQAAAAFAAIAAAALAPv/AAAFAAMAAAD0//v/AAAGAAMAAADz/wIAAAAKAAoAAADz/wMAAAAKAAoAAAD4//z/AAAHAAwAAAD4//3/AAAHAA0AAAD5//z/AAAIAAwAAAD5//3/AAAIAA0AAAD6//z/AAAJAAwAAAD6//3/AAAJAA0AAAA=")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/PlayerDie" index="0"]
+position = Vector2(55.5, 12)
+shape = SubResource("RectangleShape2D_omdkc")
+
+[node name="传送点" parent="tool" index="1"]
+self_path = "res://场景/level/level_4.tscn"
+path = "res://场景/level/level_5.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/传送点" index="0"]
+position = Vector2(203, 0)
+shape = SubResource("RectangleShape2D_hf4ml")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tool" index="2"]
+visible = false
+offset_left = -149.0
+offset_top = -76.0
+offset_right = 152.0
+offset_bottom = -19.0
+theme_override_fonts/normal_font = ExtResource("2_76axh")
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "	         human bridge
+Hold down [Shift] to stop at the edge"
+
+[node name="Player" parent="." index="3" instance=ExtResource("3_l6p2f")]
+position = Vector2(-174, 47)
+pos = Vector2(-174, 47)

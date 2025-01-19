@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=4 uid="uid://bj18eosmpke06"]
+
+[ext_resource type="PackedScene" uid="uid://x0ira55cwa7p" path="res://场景/level/level.tscn" id="1_k1juh"]
+[ext_resource type="FontFile" uid="uid://c4d86mydkoy8c" path="res://资源/Font.ttf" id="2_nxpdc"]
+[ext_resource type="PackedScene" uid="uid://c23mnay2qfdtc" path="res://场景/player/player.tscn" id="3_c3lmq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8ed3"]
+size = Vector2(142, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r87le"]
+size = Vector2(18, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf4ml"]
+size = Vector2(20, 33)
+
+[node name="level_3" instance=ExtResource("1_k1juh")]
+self_path = "res://场景/level/level_3.tscn"
+num = 100
+
+[node name="TileMapLayer" parent="tile" index="1"]
+tile_map_data = PackedByteArray("AAD0////AAACAAEAAAD1////AAACAAEAAAD2////AAACAAEAAAD1//v/AAACAAMAAAD2//v/AAACAAMAAAD3//v/AAACAAMAAAD4//v/AAACAAMAAAD5//v/AAACAAMAAAD6//v/AAACAAMAAAD7//v/AAACAAMAAAD8//v/AAACAAMAAAD9//v/AAACAAMAAAD+//v/AAACAAMAAAD///v/AAACAAMAAAAAAPv/AAACAAMAAAABAPv/AAACAAMAAAACAPv/AAACAAMAAAADAPv/AAACAAMAAAAEAPv/AAACAAMAAAAFAPv/AAACAAMAAAAGAPv/AAACAAMAAAAHAPv/AAACAAMAAAAIAPv/AAACAAMAAAAJAPv/AAACAAMAAAAKAPv/AAACAAMAAAD8/wUAAAACAAEAAAD9/wUAAAACAAEAAAD+/wUAAAACAAEAAAD//wUAAAACAAEAAAAAAAUAAAACAAEAAAABAAUAAAACAAEAAAACAAUAAAACAAEAAAADAAUAAAACAAEAAAAEAAUAAAACAAEAAAALAPz/AAABAAMAAAD0//z/AAADAAMAAAALAPv/AAAFAAMAAAD0//v/AAAGAAMAAADz//z/AAACAAMAAAAMAPz/AAACAAMAAADz////AAACAAEAAAD8/wQAAAAKAA8AAAD9/wQAAAALAA8AAAD+/wQAAAAMAA8AAAD//wQAAAAKAA8AAAAAAAQAAAALAA8AAAABAAQAAAAMAA8AAAACAAQAAAAKAA8AAAADAAQAAAALAA8AAAAEAAQAAAAMAA8AAAAFAAEAAAABAAIAAAAFAAIAAAABAAIAAAAFAAMAAAABAAIAAAAFAAUAAAAFAAIAAAAGAP//AAACAAEAAAAHAP//AAACAAEAAAAIAP//AAACAAEAAAAJAP//AAACAAEAAAAKAP//AAACAAEAAAALAP//AAACAAEAAAAEAAEAAAAKAA8AAEAEAAIAAAALAA8AAEAEAAMAAAAMAA8AAEAFAP//AAABAAEAAAAFAAAAAAABAAIAAAAFAAQAAAABAAIAAAAMAP//AAACAAEAAAD7/wQAAAADAAIAAAD7/wUAAAAGAAIAAAD6////AAACAAEAAAD7////AAADAAEAAAD7/wAAAAADAAIAAAD7/wEAAAADAAIAAAD7/wIAAAADAAIAAAD7/wMAAAADAAIAAAD8/wEAAAAKAA8AAFD8/wIAAAALAA8AAFD8/wMAAAAMAA8AAFD3////AAACAAEAAAD4////AAACAAEAAAD5////AAACAAEAAAA=")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/PlayerDie" index="0"]
+position = Vector2(7, 73)
+shape = SubResource("RectangleShape2D_s8ed3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="tool/PlayerDie" index="1"]
+position = Vector2(-56, 41)
+shape = SubResource("RectangleShape2D_r87le")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="tool/PlayerDie" index="2"]
+position = Vector2(73, 41)
+shape = SubResource("RectangleShape2D_r87le")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tool/传送点" index="0"]
+position = Vector2(209, -32)
+shape = SubResource("RectangleShape2D_hf4ml")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tool" index="2"]
+offset_left = -45.0
+offset_top = -57.0
+offset_right = 229.0
+theme_override_fonts/normal_font = ExtResource("2_nxpdc")
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "human bridge"
+
+[node name="Player" parent="." index="3" instance=ExtResource("3_c3lmq")]
+position = Vector2(-164, -32)
+pos = Vector2(-164, -32)
+direction = 1

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq77awk45fs1q"]
+
+[ext_resource type="Script" path="res://脚本/全局/soundmanger.gd" id="1_spcuq"]
+[ext_resource type="AudioStream" uid="uid://b0t0i2nhajegw" path="res://资源/music/jump.wav" id="2_fh4na"]
+[ext_resource type="AudioStream" uid="uid://1qcvypbsxlvb" path="res://资源/music/run.wav" id="3_1vj15"]
+[ext_resource type="AudioStream" uid="uid://b66p3gbpmpkcc" path="res://资源/music/diee.wav" id="3_jaevj"]
+[ext_resource type="AudioStream" uid="uid://d2ssk0o2wcxqr" path="res://资源/music/UIpress.wav" id="4_3rt6k"]
+[ext_resource type="AudioStream" uid="uid://dns2ma12er0rl" path="res://资源/music/UIfocus.wav" id="5_dldr4"]
+
+[node name="soundmanger" type="Node"]
+script = ExtResource("1_spcuq")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("2_fh4na")
+
+[node name="die" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_jaevj")
+
+[node name="run" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_1vj15")
+
+[node name="landing" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_3rt6k")
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_dldr4")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]

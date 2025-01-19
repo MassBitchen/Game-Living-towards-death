@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcrbr1r4svnnb"]
+
+[ext_resource type="Script" path="res://场景/UI/setting.gd" id="1_66cxf"]
+[ext_resource type="FontFile" uid="uid://c4d86mydkoy8c" path="res://资源/Font.ttf" id="2_bltjc"]
+
+[node name="setting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_66cxf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.301961)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 42.0
+offset_right = 214.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("2_bltjc")
+theme_override_font_sizes/font_size = 12
+text = "title"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

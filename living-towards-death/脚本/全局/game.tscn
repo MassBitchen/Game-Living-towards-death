@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg6f0tsk44r32"]
+
+[ext_resource type="Script" path="res://脚本/全局/game.gd" id="1_vq47k"]
+
+[node name="Game" type="CanvasLayer"]
+script = ExtResource("1_vq47k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
